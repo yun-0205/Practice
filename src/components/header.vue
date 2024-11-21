@@ -17,9 +17,11 @@ const goHome = () => {
   </a-layout-header>
 </template>
 
-<style scoped>
+<style lang="scss">
+@import "../assets/style.scss";
+
 .header {
-  background-color: #F2A73B;
+  background-color: $primary-500;
   box-shadow: 0px 1px 6px #00000015;
   z-index: 10;
 }
@@ -27,13 +29,11 @@ const goHome = () => {
 .logo {
   display: flex;
   justify-content: center;
-  color: #001529;
   cursor: pointer;
 }
 
 .logo h1 {
-  font-weight: 800;
   margin-left: 8px;
-  font-size: 30px;
+  font-size: 32px;
 }
 </style>

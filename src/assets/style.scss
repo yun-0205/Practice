@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto";
+}
+
+.layout {
+  height: 100vh;
+}
+
+// color
+$primary-600: #E48E11;
+$primary-500: #F2A73B;
+$primary-100: #FFF3E1;
+
+$secondary-600: #001529;
+$secondary-500: #1A344B;
+$secondary-100: #32506A;
+
+$state-success: #079904;
+$state-error: #C20000;
+$state-warning: #FFC700;
+$state-info: #1D65F4;
+
+$disabled-600: #BFC2C7;
+$disabled-500: #E1E4EA;
+$disabled-100: #EFF1F5;
+
+$background-main: #F7F8FA;
+$background-white: #FFFFFF;
+
+$text-primary: #001529;
+$text-secondary: #5E7D98;
+$text-tertiary: #999999;
+$text-divider: #F6F6F6;
+$text-white: #FFFFFF;
+
+$textfields-placeholder: #E1E4EA;
+$textfields-outline: #E1E4EA;
+
+$textfields-background-main: #FFFFFF;
+$textfields-background-variant: #EEF0F2;

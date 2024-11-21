@@ -8,7 +8,7 @@ const route = useRoute();
 
 const updateMenuState = () => {
   const path = route.path;
-  
+
   if (path.includes('products1')) {
     selectedKeys.value = ['1'];
     openKeys.value = ['sub1'];
@@ -34,11 +34,7 @@ watch(() => route.path, updateMenuState);
 
 <template>
   <a-layout-sider width="240">
-    <a-menu
-    v-model:selectedKeys="selectedKeys"
-    v-model:openKeys="openKeys"
-    mode="inline"
-      :style="{ height: '100%', borderRight: 0 }">
+    <a-menu v-model:selectedKeys="selectedKeys" v-model:openKeys="openKeys" mode="inline">
       <a-sub-menu key="sub1">
         <template #title>
           <span>

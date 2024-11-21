@@ -27,9 +27,8 @@ import SideBar from '../components/sideBar.vue';
 }
 
 .content h1 {
-  color: #001529;
   font-size: 36px;
-  font-weight: 700;
+  text-align: center;
 }
 
 .content img {
