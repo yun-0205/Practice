@@ -1,0 +1,42 @@
+{
+  "token": {
+    "colorPrimary": "#f2a73b",
+    "colorPrimaryBg": "#fffbf0",
+    "colorSuccess": "#079904",
+    "colorWarning": "#ffc700",
+    "colorError": "#c20000",
+    "colorInfo": "#1d65f4",
+    "colorTextBase": "#001529",
+    "wireframe": false,
+    "borderRadiusSM": 6,
+    "borderRadiusXS": 6,
+    "borderRadiusLG": 6,
+    "fontSize": 16
+  },
+  "components": {
+    "Menu": {
+      "dropdownWidth": 160,
+      "colorItemBg": "#001529",
+      "colorItemText": "#ffffff",
+      "colorItemTextHover": "#F2A73B",
+      "colorGroupTitle": "#ffffff",
+      "colorItemTextHoverHorizontal": "#F2A73B",
+      "colorItemTextSelected": "#F2A73B",
+      "colorItemTextSelectedHorizontal": "#F2A73B",
+      "colorItemBgSelected": "#001529"
+    },
+    "Pagination": {
+      "colorPrimaryHover": "#ffc466",
+      "fontWeightStrong": 600,
+      "colorBgContainerDisabled": "#F2F2F2",
+      "controlItemBgActiveDisabled": "#F2F2F2",
+      "colorBgContainer": "#ffffff"
+    },
+    "Table": {
+      "controlItemBgHover": "rgba(0, 21, 41, 0.04)",
+      "colorFillAlter": "rgba(0, 21, 41, 0.02)",
+      "colorFillContent": "rgba(0, 21, 41, 0.06)",
+      "colorFillSecondary": "rgba(0, 21, 41, 0.06)"
+    }
+  }
+}
