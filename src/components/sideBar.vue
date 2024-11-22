@@ -1,98 +1,60 @@
 <script setup>
-import { ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { h, reactive } from 'vue';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 
-const selectedKeys = ref([]);
-const openKeys = ref([]);
-const route = useRoute();
-
-const updateMenuState = () => {
-  const path = route.path;
-
-  if (path.includes('products1')) {
-    selectedKeys.value = ['1'];
-    openKeys.value = ['sub1'];
-  } else if (path.includes('products2')) {
-    selectedKeys.value = ['2'];
-    openKeys.value = ['sub1'];
-  } else if (path.includes('User1')) {
-    selectedKeys.value = ['3'];
-    openKeys.value = ['sub2'];
-  } else if (path.includes('User2')) {
-    selectedKeys.value = ['4'];
-    openKeys.value = ['sub2'];
+function getItem(label, key, icon, children, type) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  };
+}
+const items = reactive([
+  getItem('Navigation One', 'sub1', () => h(MailOutlined), [
+    getItem('Option 1', '1'),
+    getItem('Option 2', '2'),
+    getItem('Option 3', '3'),
+    getItem('Option 4', '4'),
+  ]),
+  getItem('Navigation Two', 'sub2', () => h(AppstoreOutlined), [
+    getItem('Option 5', '5'),
+    getItem('Option 6', '6'),
+    getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+  ]),
+  getItem('Navigation Three', 'sub4', () => h(SettingOutlined), [
+    getItem('Option 9', '9'),
+    getItem('Option 10', '10'),
+    getItem('Option 11', '11'),
+    getItem('Option 12', '12'),
+  ]),
+]);
+const state = reactive({
+  rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
+  openKeys: ['sub1'],
+  selectedKeys: [],
+});
+const onOpenChange = openKeys => {
+  const latestOpenKey = openKeys.find(key => state.openKeys.indexOf(key) === -1);
+  if (state.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+    state.openKeys = openKeys;
   } else {
-    selectedKeys.value = [];
-    openKeys.value = [];
+    state.openKeys = latestOpenKey ? [latestOpenKey] : [];
   }
 };
-
-updateMenuState();
-
-watch(() => route.path, updateMenuState);
 </script>
 
 <template>
-  <a-layout-sider width="240">
-    <a-menu v-model:selectedKeys="selectedKeys" v-model:openKeys="openKeys" mode="inline">
-      <a-sub-menu key="sub1">
-        <template #title>
-          <span>
-            <img class="menuDevice" src="../assets/icons/menuDevice.svg" alt="Device Icon">
-            Device
-          </span>
-        </template>
-        <a-menu-item key="1"><img class="icon1" src="../assets/icon/icon1.svg">
-          <RouterLink to="/products1">products1</RouterLink>
-        </a-menu-item>
-        <a-menu-item key="2"><img class="icon2" src="../assets/icon/icon2.svg">
-          <RouterLink to="/products2">products2</RouterLink>
-        </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub2">
-        <template #title>
-          <span>
-            <img class="menuSettings" src="../assets/icons/menuSettings.svg" alt="Settings Icon">
-            Settings
-          </span>
-        </template>
-        <a-menu-item key="3"><img class="accountIcon" src="../assets/icon/account.svg">User1</a-menu-item>
-        <a-menu-item key="4"><img class="accountIcon" src="../assets/icon/account.svg">User2</a-menu-item>
-      </a-sub-menu>
-    </a-menu>
-  </a-layout-sider>
+  <a-menu
+  v-model:selectedKeys="state.selectedKeys"
+  style="width: 320px; height: calc(100vh - 64px);"
+  mode="inline"
+  :open-keys="state.openKeys"
+  :items="items"
+  @openChange="onOpenChange"
+  ></a-menu>
 </template>
 
-<style scoped>
-.icon1 {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  vertical-align: middle;
-  margin-bottom: 3px;
-}
-
-.icon2 {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  vertical-align: middle;
-  margin-bottom: 3px;
-}
-
-.menuDevice {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  vertical-align: middle;
-  margin-bottom: 3px;
-}
-
-.menuSettings {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  vertical-align: middle;
-  margin-bottom: 3px;
-}
+<style lang="scss" scoped>
 </style>

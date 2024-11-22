@@ -6,19 +6,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../layouts/mainLayout.vue'),
+      component: () => import('../layouts/MainLayout.vue'),
       children: [
         {
           path: '/settings',
           name: 'settings',
-          components: () => import('../pages/settings.vue')
+          components: () => import('../pages/Settings.vue')
         },
       ]
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => import('../pages/errorNotFound.vue')
+      component: () => import('../pages/ErrorNotFound.vue')
     },
   ],
 })

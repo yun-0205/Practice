@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <h1>TEST</h1>
+  <h1>Settings Page</h1>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

@@ -13,11 +13,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@import "@/assets/style.scss";`,
-  //     },
-  //   },
-  // },
+css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+        additionalData: `@use "@/assets/style.scss" as *;`,
+      },
+    },
+  },
 });

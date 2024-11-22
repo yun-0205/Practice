@@ -11,19 +11,31 @@
     "borderRadiusSM": 6,
     "borderRadiusXS": 6,
     "borderRadiusLG": 6,
-    "fontSize": 16
+    "lineHeightHeading2": 1.2,
+    "lineHeightHeading3": 1.2,
+    "lineHeightHeading4": 1.3,
+    "lineHeightHeading5": 1.4,
+    "fontSize": 16,
+    "lineHeightLG": 1.4,
+    "lineHeightHeading1": 1.2,
+    "lineHeightSM": 1.5,
+    "colorText": "#001529",
+    "colorTextSecondary": "#5E7D98",
+    "colorTextTertiary": "#999999",
+    "colorTextQuaternary": "#999999"
   },
   "components": {
     "Menu": {
       "dropdownWidth": 160,
       "colorItemBg": "#001529",
       "colorItemText": "#ffffff",
-      "colorItemTextHover": "#F2A73B",
+      "colorItemTextHover": "#ffffff",
       "colorGroupTitle": "#ffffff",
-      "colorItemTextHoverHorizontal": "#F2A73B",
-      "colorItemTextSelected": "#F2A73B",
-      "colorItemTextSelectedHorizontal": "#F2A73B",
-      "colorItemBgSelected": "#001529"
+      "colorItemTextHoverHorizontal": "#ffffff",
+      "colorItemTextSelected": "#ffffff",
+      "colorItemTextSelectedHorizontal": "#ffffff",
+      "colorItemBgSelected": "#32506A",
+      "colorItemBgHover": "#32506A"
     },
     "Pagination": {
       "colorPrimaryHover": "#ffc466",
